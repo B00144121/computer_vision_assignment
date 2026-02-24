@@ -3,7 +3,9 @@ import numpy as np
 import time
 
 #read in an image into memory
-img = cv.imread('c:/users/simon/Pictures/cameraman.png',0)
+img = cv.imread(r"C:\Users\B00144121\Downloads\computer_vision_assignment\images\Oring1.jpg"
+)
+img = cv.cvtColor(img,cv.COLOR_BGR2GRAY) #convert to grayscale
 copy = img.copy()
 #check out some of its pixel values...img[x,y]..try different x and y values
 x = 100
