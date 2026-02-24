@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 #read in an image into memory
-img = cv.imread(r"C:\Users\B00144121\Downloads\computer_vision_assignment\images\Oring1.jpg"
+img = cv.imread(r"C:\Users\B00144121\Downloads\computer_vision_assignment\images\Oring2.jpg"
 )
 img = cv.cvtColor(img,cv.COLOR_BGR2GRAY) #convert to grayscale
 copy = img.copy()
