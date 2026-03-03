@@ -7,7 +7,8 @@ def compute_historgram(gray):
 
     for v in pixels:
         hist[int(v)] += 1
-
         
+
+
 
     return hist
