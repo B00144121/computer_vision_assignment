@@ -3,11 +3,12 @@ import numpy as np
 import time
 
 from src.thresholding import otsu_threshold, apply_threshold
+from src.morphology import closing
 
 
 image_paths = [
-    "images/Oring1.jpg",
-    "images/Oring2.jpg"
+    
+    "images/Oring11.jpg"
 ]
 
 #loops through each image path
@@ -30,6 +31,7 @@ for path in image_paths:
     t = otsu_threshold(gray)
 
     binary = apply_threshold(gray, t)
+    close =closing(binary)
 
     end = time.perf_counter()
 
@@ -38,8 +40,9 @@ for path in image_paths:
 
     cv.imshow("Original", img)
     cv.imshow("Grayscale", gray)
-    cv.imshow("Binary", binary)
-    cv.waitKey(0)
+    cv.imshow("Binary Original", binary)
+    cv.imshow("Binary Closed", close)
+    
 
 
     
