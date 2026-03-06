@@ -4,6 +4,8 @@ import time
 
 from src.thresholding import otsu_threshold, apply_threshold
 from src.morphology import closing
+from src.ccl import connected_components
+
 
 
 image_paths = [
@@ -32,6 +34,9 @@ for path in image_paths:
 
     binary = apply_threshold(gray, t)
     close =closing(binary)
+
+    labels, stats = connected_components(close)
+    print("components found:", len(stats)-1)
 
     end = time.perf_counter()
 
