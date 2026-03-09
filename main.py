@@ -5,9 +5,11 @@ import time
 from src.thresholding import otsu_threshold, apply_threshold
 from src.morphology import closing
 from src.ccl import connected_components, largest_component_mask
+from src.analysis import analyse_ring
+
 
 image_paths = [
-    "images/Oring11.jpg"
+    "images/Oring15.jpg"
 ]
 
 # loops through each image path
@@ -38,6 +40,11 @@ for path in image_paths:
 
     ring_mask = largest_component_mask(labels, stats)
     cv.imshow("Largest Component", ring_mask)
+
+    result, ratio = analyse_ring(ring_mask)
+
+    print("result:", result)
+    print("ratio:", ratio)
 
     end = time.perf_counter()
 
